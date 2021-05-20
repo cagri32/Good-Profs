@@ -11,7 +11,6 @@ from selenium.webdriver.common.by import By
 
 # To block the ads in the website, I install adblocker every time I run the code.
 # I will find a better, efficient way to handle this
-path_to_extension = r'C:\Users\YOUR_USER_NAME\Desktop\1.9.0_0'
 chop = webdriver.ChromeOptions()
 chop.add_extension(path.abspath('C:\\Users\\Cagri\\Desktop\\Python\\gighmmpiobklfepjocnamgkkbiglidom-4.33.0-Crx4Chrome.com.crx'))
 driver = webdriver.Chrome(options = chop)
@@ -28,7 +27,7 @@ NumRatingOver4 = 'div[@class="CardNumRating__CardNumRatingNumber-sc-17t4b9u-2 kM
 
 # Click Show More as many times as stated below
 #while driver.find_element_by_xpath("//button[contains(text(), 'Show More')]"):
-for i in range(10):
+for i in range(3):
     driver.find_element_by_xpath("//button[contains(text(), 'Show More')]").click()
     sleep(0.4)
 
@@ -44,12 +43,18 @@ for x in range (len(Ratings)):
     parent = rating.find_element_by_xpath('./../..') # wrapper of Rating
     allInfo = parent.find_element_by_xpath("./following-sibling::div")
     name = allInfo.find_element_by_xpath("./div[contains(@class, 'CardName__StyledCardName')]")
-    department = name.find_element_by_xpath("./following-sibling::div/div[contains(@class, 'CardSchool__Department')]")
-    university = name.find_element_by_xpath("./following-sibling::div/div[contains(@class, 'CardSchool__School')]")
 
-    # Other information to be obtained
-    #takeAgain = allInfo.find_element_by_xpath("./div[contains(@class, 'CardFeedback__CardFeedbackNumber-lq6nix-2 hroXqf')]").text
-    #difficulty = allInfo.find_element_by_xpath("./div[contains(@class, 'CardSchool__Department')]").text
+    schoolcard = name.find_element_by_xpath("./following-sibling::div")
+    department = schoolcard.find_element_by_xpath("./div[contains(@class, 'CardSchool__Department')]")
+    university = schoolcard.find_element_by_xpath("./div[contains(@class, 'CardSchool__School')]")
+    
+    # More information
+    ratingcard = schoolcard.find_element_by_xpath("./following-sibling::div")
+    takeAgain = ratingcard.find_elements_by_xpath("./div/div[contains(@class, 'CardFeedbackNumber')]")[0]
+    difficulty = ratingcard.find_elements_by_xpath("./div/div[contains(@class, 'CardFeedbackNumber')]")[1]
+    
+    # Keep this method here to reference it later
+    #difficulty = takeAgain.find_element_by_xpath("./../following-sibling::div/following-sibling::div/div[contains(@class, 'CardFeedbackNumber')]")
     
     # Print the obtained info in a format
     print("Professor:\t\t"+name.text)
@@ -57,4 +62,6 @@ for x in range (len(Ratings)):
     print("Number of Ratings is:\t"+numOfRatings.text)
     print("School:\t\t\t" + university.text)
     print("Department:\t\t"+ department.text)
+    print("Take Again:\t\t"+ takeAgain.text)
+    print("Difficulty:\t\t"+ difficulty.text)
     print()
