@@ -33,9 +33,10 @@ for i in range(3):
 
 # Get all ratings over 4
 Ratings = driver.find_elements_by_xpath('//%s'%NumRatingOver4)
-#Ratings = driver.find_elements_by_xpath('//div[@class="CardNumRating__CardNumRatingNumber-sc-17t4b9u-2 kMhQxZ"]/div[@class="CardName__StyledCardName-sc-1gyrgim-0 cJdVEK"]')
 
-# I am printing the found elements for now. They will be used differently in the future
+database = {}
+
+# Print the found elements for now. They will be used differently in the future
 for x in range (len(Ratings)):
     rating = Ratings[x]
     numOfRatings = rating.find_element_by_xpath("./following-sibling::div")
@@ -48,7 +49,7 @@ for x in range (len(Ratings)):
     department = schoolcard.find_element_by_xpath("./div[contains(@class, 'CardSchool__Department')]")
     university = schoolcard.find_element_by_xpath("./div[contains(@class, 'CardSchool__School')]")
     
-    # More information
+    # More information obtained
     ratingcard = schoolcard.find_element_by_xpath("./following-sibling::div")
     takeAgain = ratingcard.find_elements_by_xpath("./div/div[contains(@class, 'CardFeedbackNumber')]")[0]
     difficulty = ratingcard.find_elements_by_xpath("./div/div[contains(@class, 'CardFeedbackNumber')]")[1]
@@ -56,6 +57,15 @@ for x in range (len(Ratings)):
     # Keep this method here to reference it later
     #difficulty = takeAgain.find_element_by_xpath("./../following-sibling::div/following-sibling::div/div[contains(@class, 'CardFeedbackNumber')]")
     
+    database[name.text] = {}
+    database[name.text]['Name'] = name.text
+    database[name.text]['Rating'] = Ratings[x].text
+    database[name.text]['NumberofRatings'] = numOfRatings.text
+    database[name.text]['School'] = university.text
+    database[name.text]['Department'] = department.text
+    database[name.text]['Take Again'] = takeAgain.text
+    database[name.text]['Difficulty'] = difficulty.text
+
     # Print the obtained info in a format
     print("Professor:\t\t"+name.text)
     print("Rating:\t\t\t"+Ratings[x].text)
@@ -64,4 +74,8 @@ for x in range (len(Ratings)):
     print("Department:\t\t"+ department.text)
     print("Take Again:\t\t"+ takeAgain.text)
     print("Difficulty:\t\t"+ difficulty.text)
+    # print(database)
     print()
+
+sleep(5)
+driver.quit()
