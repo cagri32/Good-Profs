@@ -12,7 +12,7 @@ argms=parser.parse_args()
 if (argms.school != None): 
     school = argms.school
 else:
-    school = "YorkUni2"
+    school = "York University - Keele"
 # If department passed, use it. Otherwise, use Computer Science as default
 if (argms.department != None): 
     department = argms.department
@@ -35,7 +35,7 @@ for key in data:
       #print(data[key])
       #print(json.dumps(data[key], indent=4))
 
-depOutput = ("./../json/%s-%s.json" %(school, department))
+depOutput = ("./../json/%s - %s.json" %(school, department))
 # Dump the dictionary to a json file
 with open(depOutput, 'w') as Out:
     json.dump(Profs, Out, indent=4)
