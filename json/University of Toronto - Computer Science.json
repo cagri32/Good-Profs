@@ -1,0 +1,101 @@
+{
+    "1758344": {
+        "tid": "1758344",
+        "Name": "Paul Gries",
+        "Rating": "5.0",
+        "NumberofRatings": "1 ratings",
+        "School": "University Of Toronto",
+        "Department": "Computer Science",
+        "Take Again": "0%",
+        "Difficulty": "1",
+        "Link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=1758344"
+    },
+    "1812506": {
+        "tid": "1812506",
+        "Name": "Mohammad Shakourifar",
+        "Rating": "5.0",
+        "NumberofRatings": "2 ratings",
+        "School": "University Of Toronto",
+        "Department": "Computer Science",
+        "Take Again": "0%",
+        "Difficulty": "1",
+        "Link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=1812506"
+    },
+    "1844700": {
+        "tid": "1844700",
+        "Name": "Bryan De Bourbon",
+        "Rating": "5.0",
+        "NumberofRatings": "2 ratings",
+        "School": "University Of Toronto",
+        "Department": "Computer Science",
+        "Take Again": "100%",
+        "Difficulty": "3",
+        "Link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=1844700"
+    },
+    "1889996": {
+        "tid": "1889996",
+        "Name": "Robert Robere",
+        "Rating": "5.0",
+        "NumberofRatings": "3 ratings",
+        "School": "University Of Toronto",
+        "Department": "Computer Science",
+        "Take Again": "100%",
+        "Difficulty": "3",
+        "Link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=1889996"
+    },
+    "2045200": {
+        "tid": "2045200",
+        "Name": "Abdallah Farraj",
+        "Rating": "5.0",
+        "NumberofRatings": "4 ratings",
+        "School": "University Of Toronto",
+        "Department": "Computer Science",
+        "Take Again": "100%",
+        "Difficulty": "3.5",
+        "Link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=2045200"
+    },
+    "2271866": {
+        "tid": "2271866",
+        "Name": "Peter Rutherford",
+        "Rating": "5.0",
+        "NumberofRatings": "1 ratings",
+        "School": "University Of Toronto",
+        "Department": "Computer Science",
+        "Take Again": "100%",
+        "Difficulty": "3",
+        "Link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=2271866"
+    },
+    "2453093": {
+        "tid": "2453093",
+        "Name": "Amir Ashouri",
+        "Rating": "4.8",
+        "NumberofRatings": "4 ratings",
+        "School": "University Of Toronto",
+        "Department": "Computer Science",
+        "Take Again": "100%",
+        "Difficulty": "4.3",
+        "Link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=2453093"
+    },
+    "2525004": {
+        "tid": "2525004",
+        "Name": "Syed Ahmed",
+        "Rating": "5.0",
+        "NumberofRatings": "2 ratings",
+        "School": "University Of Toronto",
+        "Department": "Computer Science",
+        "Take Again": "100%",
+        "Difficulty": "4",
+        "Link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=2525004"
+    },
+    "2625528": {
+        "tid": "2625528",
+        "Name": "Ehsan Noei",
+        "Rating": "5.0",
+        "NumberofRatings": "1 ratings",
+        "School": "University Of Toronto",
+        "Department": "Computer Science",
+        "Take Again": "100%",
+        "Difficulty": "4",
+        "Link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=2625528"
+    }
+}
