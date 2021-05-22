@@ -23,18 +23,18 @@ chop.add_extension(path.abspath('C:\\Users\\Cagri\\Desktop\\Python\\gighmmpiobkl
 
 schools = {}
 
-schools["York University - Keele"] = "1495"
+#schools["York University - Keele"] = "1495"
 #schools["York University - Glendon"] = "12125"
 #schools["Ryerson University"] = "1471"
 #schools["Humber College"] = "1500"
-#schools["Seneca College"] = "1497"
-#schools["Centennial College"] = "3081"
-#schools["Centennial College - Scarborough"] = "13340"
-#schools["University Of Toronto"] = "12184"
-#schools["University of Toronto - Knox College"] = "4906"
-#schools["University of Toronto - Scarborough"] = "4919"
-#schools["University of Toronto - Mississauga"] = "4928"
-#schools["University of Toronto - St. George"] = "1484"
+schools["Seneca College"] = "1497"
+schools["Centennial College"] = "3081"
+schools["Centennial College - Scarborough"] = "13340"
+schools["University Of Toronto"] = "12184"
+schools["University of Toronto - Knox College"] = "4906"
+schools["University of Toronto - Scarborough"] = "4919"
+schools["University of Toronto - Mississauga"] = "4928"
+schools["University of Toronto - St. George"] = "1484"
 
 for keys in schools:
     driver = webdriver.Chrome(options = chop)
