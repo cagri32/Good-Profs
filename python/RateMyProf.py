@@ -105,7 +105,7 @@ for keys in schools:
         # Dump the dictionary to a json file with the school's name
         filename = ("./../json/%s.json" %keys)
         with open(filename, 'w') as fp:
-            json.dump(database, fp)
+            json.dump(database, fp, indent=4)
         
         sleep(5)
         driver.quit()
