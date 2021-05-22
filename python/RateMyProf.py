@@ -22,7 +22,7 @@ driver = webdriver.Chrome(options = chop)
 #driver = webdriver.Chrome('./chromedriver')
 
 # Go to the all York Professors page, wait 1 second and close the pop-up
-driver.get("https://www.ratemyprofessors.com/search/teachers?query=*&sid=12184")
+driver.get("https://www.ratemyprofessors.com/search/teachers?query=*&sid=1495")
 sleep(1)
 driver.find_element_by_xpath("//*[contains(text(), 'Close')]").click()
 
@@ -85,7 +85,7 @@ except NoSuchElementException:
         database[tid]['Link'] = link
 
     # Dump the dictionary to a json file
-    with open('UofT.json', 'w') as fp:
+    with open('YorkUni2.json', 'w') as fp:
         json.dump(database, fp)
     
     sleep(5)
