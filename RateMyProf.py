@@ -39,12 +39,14 @@ try:
         # To see the progress of the scraping process
         i += 1
         if(i%25 == 0):
-            print(database)
+            print(i)
+        # raise NoSuchElementException() # Raise error to get to except statement in all cases for testing smaller loops
+
 # Catch NoSuchElementException error at the end of the loop that looks for "Show More" button
 except NoSuchElementException:
     print("done")
     print("Clicked %d times" %i)
-    
+
     # Get all ratings over 4
     Ratings = driver.find_elements_by_xpath('//%s'%NumRatingOver4)
 
@@ -65,23 +67,25 @@ except NoSuchElementException:
         ratingcard = schoolcard.find_element_by_xpath("./following-sibling::div")
         takeAgain = ratingcard.find_elements_by_xpath("./div/div[contains(@class, 'CardFeedbackNumber')]")[0]
         difficulty = ratingcard.find_elements_by_xpath("./div/div[contains(@class, 'CardFeedbackNumber')]")[1]
-        #link = parent.find_element_by_xpath('./..').get_attribute('href')
+        link = parent.find_element_by_xpath('./../..').get_attribute('href')
+        tid = link[link.rfind("=")+1:]
         
         # Keep this method here to reference it later
         #difficulty = takeAgain.find_element_by_xpath("./../following-sibling::div/following-sibling::div/div[contains(@class, 'CardFeedbackNumber')]")
         
-        database[name.text] = {}
-        database[name.text]['Name'] = name.text
-        database[name.text]['Rating'] = Ratings[x].text
-        database[name.text]['NumberofRatings'] = numOfRatings.text
-        database[name.text]['School'] = university.text
-        database[name.text]['Department'] = department.text
-        database[name.text]['Take Again'] = takeAgain.text
-        database[name.text]['Difficulty'] = difficulty.text
-        #database[name.text]['Link'] = link
+        database[tid] = {}
+        database[tid]['tid'] = tid
+        database[tid]['Name'] = name.text
+        database[tid]['Rating'] = Ratings[x].text
+        database[tid]['NumberofRatings'] = numOfRatings.text
+        database[tid]['School'] = university.text
+        database[tid]['Department'] = department.text
+        database[tid]['Take Again'] = takeAgain.text
+        database[tid]['Difficulty'] = difficulty.text
+        database[tid]['Link'] = link
 
     # Dump the dictionary to a json file
-    with open('result.json', 'w') as fp:
+    with open('YorkUni2.json', 'w') as fp:
         json.dump(database, fp)
     
     sleep(5)
